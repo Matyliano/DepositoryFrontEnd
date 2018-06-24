@@ -1,1 +1,46 @@
 <p>This is the partial for view 1.</p>
+
+
+<div ng-controller="View1Ctrl as ctrl">
+    <table>
+        <tr>
+            <th>Nazwa</th>
+            <th>Ilość</th>
+        </tr>
+        <tr>
+            <th>
+                <input type="text" ng-model="ctrl.nazwa"/>
+            </th>
+            <th>
+                <input type="text" ng-model="ctrl.ilosc"/>
+            </th>
+            <th>
+                <button ng-click="ctrl.dodajDoListy()">Dodaj do listy</button>
+            </th>
+        </tr>
+    </table>
+
+    <table border="1px solid black">
+        <tr>
+            <th>Nazwa</th>
+            <th>Ilosc</th>
+        </tr>
+        <tr ng-repeat="wpis in ctrl.lista">
+            <td>
+                <div>
+                    {{wpis.name}}
+                </div>
+            </td>
+            <td>
+                <div>
+                    {{wpis.quantity}}
+                </div>
+            </td>
+        <tr>
+    </table>
+    <div>
+        <button ng-click="ctrl.funkcja1()">Dodaj do magazynu</button>
+    </div>
+
+</div>
+
